@@ -1,6 +1,10 @@
 class ListingsController < ApplicationController
   before_action :set_list
 
+  def index
+    @listings = Listing.all
+  end
+
   def new
     @listing = Listing.new
   end
