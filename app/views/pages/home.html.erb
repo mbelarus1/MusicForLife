@@ -1,54 +1,53 @@
-<h1>HomePage</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% end %>
 
-<h1>HomePage</h1>
-<h1>HomePage</h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class=e2_84>
-  <div class=e1_22>
-    <div class=e1_8>
-      <div class=e1_9>
-        <div class="e1_10"></div>
-      </div>
-      <div class=e1_11>
-        <div class="e1_12"></div>
-        <div class=e1_13><span  class="e1_14">Rent your dream guitar tonight</span></div>
-      </div>
-      <div class="e3_50"></div>
-      <div class=e2_91>
-        <div class=ei2_91_2_15>
-          <div class="ei2_91_2_16"></div><span  class="ei2_91_2_17">Find</span>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Index", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Your Profile", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
         </div>
-      </div>
-    </div>
-    <div class=e1_40><span  class="e1_41">Sites</span><span  class="e1_42">Features BlaBla
-Bla Bal</span><span  class="e1_43">©  Logo We love our users!</span><span  class="e1_45">Community</span><span  class="e1_46">Featured artists
-The Portal
-Live events</span><span  class="e1_47">Company</span><span  class="e1_48">About us
-Contact us
-History</span>
-      <div class=e1_86><span  class="e1_87">Logo</span>
-        <div class=e1_88>
-          <div class="e1_89"></div>
-          <div class="e1_90"></div>
-        </div>
-        <div class=e1_91>
-          <div class="e1_92"></div>
-          <div class="e1_93"></div>
-        </div>
-      </div>
-      <div class="e1_52"></div>
-      <div class="e1_99"></div>
-      <div class=e1_78>
-        <div class="e1_79"></div>
-      </div>
-      <div class=e1_76>
-        <div class="e1_77"></div>
-        <div class="e1_100"></div>
-      </div>
-      <div class=e1_72>
-        <div class="e1_73"></div>
-      </div>
-    </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="banner">
+  <div class="container">
+    <h3>Rent Your Dream Guitar Today!</h3>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Find
+    </button>
+  </div>
+<% end %>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-copyright">
+    Designed and built with all <i class="fas fa-heart"></i> by the MusicForLife team
+  </div>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
   </div>
 </div>
