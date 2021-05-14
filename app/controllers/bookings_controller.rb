@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :create, :edit, :update, :destroy]
 
-  def index
-    @bookings = Booking.all
-  end
-
   def show
   end
 
@@ -14,8 +10,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user  = current_user
+    @booking.listing = Listing.find(params[:listing_id])
+
     if @booking.save
-      redirect_to booking_path(@lbooking)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -44,3 +43,6 @@ class BookingsController < ApplicationController
     params.require(:bookings).permit(:start_date, :end_date, :price)
   end
 end
+
+# user comes from devise -> current_user
+# listing
