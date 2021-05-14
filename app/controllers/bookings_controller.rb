@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking
+  before_action :set_booking, only: [:edit, :create, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -19,17 +19,14 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
   end
 
   def destroy
-    @booking = Booking.find(booking_params)
     @booking.destroy
     redirect_to booking_path
   end
