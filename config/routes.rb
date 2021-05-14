@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  #custom view for My Listings
+  #Custom view for My Listings
     get 'my_listings', to: 'listings#my_listings'
 end
 
