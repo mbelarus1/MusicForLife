@@ -1,39 +1,102 @@
 // Import page-specific CSS files here.
 
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+h2 {
+  font-size: 24px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 
 .card {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
-}
-
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
 }
 
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+    height: 300px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+    height: 300px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    height: 300px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 300px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)  {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 300px;
+  }
+}
+
+.map_card {
+  display: grid;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .map_card {
+    height: 650px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .map_card {
+    height: 650px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .map_card{
+    height: 650px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .map_card {
+    height: 640px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)  {
+  .map_card {
+    height: 640px;
+  }
 }
 
 .gutters-sm {
