@@ -28,6 +28,11 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.container_p {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -134,5 +139,44 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
     height: 300px;
+  }
+}
+
+.cards_4 {
+  display: grid;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards_4 {
+    height: 650px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards_4 {
+    height: 650px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards_4 {
+    height: 650px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards_4 {
+    height: 640px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)  {
+  .cards_4 {
+    height: 640px;
   }
 }
