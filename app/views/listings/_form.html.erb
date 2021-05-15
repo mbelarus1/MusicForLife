@@ -1,6 +1,6 @@
 <%= simple_form_for(listing) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn btn-primary'%>
+  <%= f.input :photos, as: :file %>
+  <%= f.submit 'Create', class: 'btn btn-danger'%>
 <% end %>
