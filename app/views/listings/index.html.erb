@@ -1,0 +1,9 @@
+<div class="container">
+  <ul>
+    <% @listings.each do |listing| %>
+      <li><%= listing.title %></li>
+      <li><%= listing.description %></li>
+      <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </ul>
+</div>
