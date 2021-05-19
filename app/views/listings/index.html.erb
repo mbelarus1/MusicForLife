@@ -13,9 +13,14 @@
   <h2>Your search results</h2>
   <div class="cards">
     <% @listings.each do |listing| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, height: 300, crop: :fill %>')">
-         <%= link_to listing.title, listing_path(listing) %>
+      <% if listing.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, height: 300, crop: :fill %>')">
+      <% else %>
+        <div>
+      <% end %>
+        <%= link_to listing.title, listing_path(listing) %>
       </div>
+
     <% end %>
    </div>
   </div>
