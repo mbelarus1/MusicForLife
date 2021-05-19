@@ -31,7 +31,7 @@ require "open-uri"
           description: Faker::Quote.matz,
           )
          listing.user = User.all.sample
-        file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+        file = URI.open('https://www.jimlaabsmusicstore.com/wp-content/uploads/2019/12/Medeli-DP650K-Digital-Upright-Piano.jpg')
          puts "Listing creation..."
          puts listing.title
           listing.save!
