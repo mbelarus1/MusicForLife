@@ -1,28 +1,26 @@
 
-<div class="container_p">
+<div class="main-container">
 
-<div class="container">
-  <h2>Nearby you</h2>
-  <div class="map_card">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://assets.website-files.com/5e832e12eb7ca02ee9064d42/5f7db426b676b95755fb2844_Group%20805.jpg')">
-  </div>
-  </div>
-</div>
-
-<div class="container">
-  <h2>Your search results</h2>
-  <div class="cards">
-    <% @listings.each do |listing| %>
-      <% if listing.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, height: 300, crop: :fill %>')">
-      <% else %>
-        <div>
-      <% end %>
-        <%= link_to listing.title, listing_path(listing) %>
+  <div class="container">
+    <h1>NEARBY YOU</h1>
+      <div class="map-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://assets.website-files.com/5e832e12eb7ca02ee9064d42/5f7db426b676b95755fb2844_Group%20805.jpg')">
       </div>
+  </div>
 
-    <% end %>
-   </div>
+  <div class="container">
+    <h1>YOUR SEARCH RESULTS</h1>
+      <div class="cards">
+      <% @listings.each do |listing| %>
+        <% if listing.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, height: 300, crop: :fill %>')">
+        <% else %>
+          <div>
+        <% end %>
+          <%= link_to listing.title, listing_path(listing), class: 'card-link' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
   </div>
 
   <%# <h2>Most popular instruments</h2>
@@ -46,6 +44,5 @@
 
     </div>
  </div> %>
-</div>
 </div>
 
