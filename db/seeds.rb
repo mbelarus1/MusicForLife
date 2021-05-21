@@ -28,6 +28,7 @@ require "open-uri"
         10.times do
           listing = Listing.create(
           title: Faker::Music.instrument,
+          price: rand(1..289),
           description: Faker::Quote.matz,
           )
          listing.user = User.all.sample
@@ -41,30 +42,30 @@ require "open-uri"
         # attaching image:
 
     #Seeding Booking
-        5.times do
-          booking = Booking.create(
-          start_date: "TBD",
-          end_date: "TBD",
-          price: 43
+        # 5.times do
+        #   booking = Booking.create(
+        #   start_date: "TBD",
+        #   end_date: "TBD",
+        #   price: 43
 
-          )
-          booking.user = User.all.sample
-          booking.listing =  Listing.all.sample
-         puts "Booking creation..."
-          booking.save!
-        end
-#Seeding Reviews
-      Review.destroy_all
-        10.times do
-          review = Review.create(
-          comment: "Oh my god, so Amazing",
-          rating: 5,
-          )
-          review.booking = Booking.all.sample
-          review.user = User.all.sample
-         puts "Review creation..."
+        #   )
+        #   booking.user = User.all.sample
+        #   booking.listing =  Listing.all.sample
+        #  puts "Booking creation..."
+        #   booking.save!
+       # end
+# #Seeding Reviews
+#       Review.destroy_all
+#         10.times do
+#           review = Review.create(
+#           comment: "Oh my god, so Amazing",
+#           rating: 5,
+#           )
+#           review.booking = Booking.all.sample
+#           review.user = User.all.sample
+#          puts "Review creation..."
 
-          review.save!
-        end
+#           review.save!
+#         end
 
 
