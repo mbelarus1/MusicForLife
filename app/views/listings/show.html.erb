@@ -1,5 +1,22 @@
 <div class="container">
 <h2> <%= @listing.title %> </h2>
-
-
+<h4>Description:<%= @listing.description %></h4>
+<h5>Available photo(s):</h5>
+<% if @listing.photo.attached? %>
+   <div class="card">
+          <img src="<%= cl_image_path @listing.photo.key, height: 200, crop: :fill %>" />
+          <div class="card-infos">
+            <h2 class="card-pricing">Price: <%=@listing.price %></h2>
+            </div>
+        </div>
+        <% else %>
+          <div>
+          <div class="card">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-infos">
+            <h2 class="card-pricing"><%=@listing.price%></h2>
+            </div>
+        </div>
+        <% end %>
+        <%= link_to "Book Now!", new_listing_booking_path(@listing, @booking), class: 'btn btn-home' %>
 </div>
