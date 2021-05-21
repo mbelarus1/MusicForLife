@@ -2,7 +2,15 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listings = Listing.first(9)
+    if params[:query].present?
+      sql_query = "\
+      listings.title @@ :query \
+      OR listings.description @@ :query \
+      "
+      @listings = Listing.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = Listing.first(9)
+    end
   end
 
   def show
