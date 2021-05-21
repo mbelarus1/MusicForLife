@@ -3,18 +3,20 @@
       <h1>MusicForLife</h1>
       <p>Your one-stop platform for music services and music instruments rental.</p>
       <br>
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" placeholder="What do you want to rent today?" type="text" name="search[query]" id="search_query" >
-        <button name="button" type="submit" class="btn btn-music" >
-          <%= link_to "", listings_path, class: 'btn-link fas fa-search' %>
-        </button>
-      </div>
-      <% end %>
+
+      <%= form_tag listings_path, method: :get, class: 'search-container' do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-field",
+            placeholder: "What do you want to rent today?"
+          %>
+          <%= submit_tag "Search", class: "btn btn-music" %>
+        <% end %>
+
       <%= link_to "EXPLORE NOW", listings_path, class: 'btn btn-home' %>
 
      <div class="container_2">
-      <p>YOUR SEARCH RESULTS</p>
+      <h3>Our Best Recommendation</h3>
       <div class="cards_2">
       <% @listings.each do |listing| %>
         <% if listing.photo.attached? %>
@@ -27,13 +29,11 @@
             <h2 class="card-pricing">$99.99</h2>
           </div>
       </div>
-      <% else %>
-      <div>
+            <div>
         <% end %>
         <% end %>
       </div>
-      </div>
-      </div>
-
-      </div>
+    </div>
+    </div>
+ </div>
   </div>
