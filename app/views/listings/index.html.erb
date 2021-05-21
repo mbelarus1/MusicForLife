@@ -14,7 +14,7 @@
         <% if listing.photo.attached? %>
         <%= link_to listing_path(listing), style: 'text-decoration: none; link-style: none; color: #455964;' do %>
         <div class="card">
-          <img src="<%= cl_image_path listing.photo.key, height: 200, crop: :fill %>" />
+          <img src="<%= cl_image_path listing.photo.key, height: 200 %>" />
           <div class="card-infos">
             <div>
               <h2><%= listing.title %></h2>
