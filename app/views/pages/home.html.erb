@@ -12,36 +12,37 @@
       </div>
       <% end %>
       <%= link_to "EXPLORE NOW", listings_path, class: 'btn btn-home' %>
-      </div>
 
- <div class="container">
-    <h1>YOUR SEARCH RESULTS</h1>
-      <div class="cards">
-      <% listings.each do |listing| %>
+     <div class="container">
+      <p>YOUR SEARCH RESULTS</p>
+      <div class="cards_2">
+      <% @listings.each do |listing| %>
         <% if listing.photo.attached? %>
-        <div class="card">
-          <img src="<%= cl_image_path listing.photo.key, height: 200, crop: :fill %>" />
+      <div class="card">
+        <img src="<%= cl_image_path listing.photo.key, height: 100, crop: :fill %>" />
           <div class="card-infos">
             <div>
               <h2><%= listing.title %></h2>
-              </div>
-            <h2 class="card-pricing">$99.99</h2>
             </div>
-        </div>
-        <% else %>
-          <div>
-          <div class="card">
+            <h2 class="card-pricing">$99.99</h2>
+          </div>
+      </div>
+      <% else %>
+      <div>
+        <div class="card">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-infos">
             <div>
               <h2><%= listing.title %></h2>
-              </div>
-            <h2 class="card-pricing">$99.99</h2>
             </div>
+            <h2 class="card-pricing">$99.99</h2>
+          </div>
         </div>
         <% end %>
         <% end %>
       </div>
-    </div>
- </div>
-</div>
+      </div>
+      </div>
+
+      </div>
+  </div>
