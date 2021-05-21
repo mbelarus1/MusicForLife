@@ -1,5 +1,5 @@
 <div class="banner">
-    <div class="container">
+    <div class="container_1">
       <h1>MusicForLife</h1>
       <p>Your one-stop platform for music services and music instruments rental.</p>
       <br>
@@ -13,7 +13,7 @@
       <% end %>
       <%= link_to "EXPLORE NOW", listings_path, class: 'btn btn-home' %>
 
-     <div class="container">
+     <div class="container_2">
       <p>YOUR SEARCH RESULTS</p>
       <div class="cards_2">
       <% @listings.each do |listing| %>
@@ -29,15 +29,6 @@
       </div>
       <% else %>
       <div>
-        <div class="card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-infos">
-            <div>
-              <h2><%= listing.title %></h2>
-            </div>
-            <h2 class="card-pricing">$99.99</h2>
-          </div>
-        </div>
         <% end %>
         <% end %>
       </div>
