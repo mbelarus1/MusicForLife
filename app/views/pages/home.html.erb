@@ -13,14 +13,14 @@
           <%= submit_tag "Search", class: "btn btn-music" %>
         <% end %>
 
-      <%= link_to "EXPLORE NOW", listings_path, class: 'btn btn-home' %>
+      <%= link_to "Explore Now", listings_path, class: 'btn btn-home' %>
 
      <div class="container_2">
       <h3>Our Best Recommendation</h3>
       <div class="cards_2">
       <% @listings.each do |listing| %>
         <% if listing.photo.attached? %>
-      <div class="card">
+      <div class="card_2">
         <img src="<%= cl_image_path listing.photo.key, height: 100, crop: :fill %>" />
           <div class="card-infos">
             <div>

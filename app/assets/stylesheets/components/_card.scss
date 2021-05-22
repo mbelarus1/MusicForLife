@@ -2,10 +2,11 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display : grid;
 }
 
 .card > img {
-  height: 150px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
@@ -43,3 +44,27 @@
 }
 
 
+.card_2 {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display : grid;
+}
+
+.card_2 > img {
+  height: 130px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card_2 h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card_2 p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
