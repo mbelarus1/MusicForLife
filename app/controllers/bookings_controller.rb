@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.listing = Listing.find(params[:listing_id])
 
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to root_path, notice: "Booking succesfully created!"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to booking_path
   end
 
   def destroy
@@ -42,9 +42,6 @@ class BookingsController < ApplicationController
 
 
   def booking_params
-    params.require(:bookings).permit(:start_date, :end_date, :price)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
-
-# user comes from devise -> current_user
-# listing

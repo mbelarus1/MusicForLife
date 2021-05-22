@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :edit, :update]
   end
 
-  resources :bookings do
+  resources :bookings, except: [:new, :create, :edit, :update] do
     resources :reviews, only: [:new, :create]
   end
 
