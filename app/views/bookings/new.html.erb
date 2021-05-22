@@ -1,29 +1,24 @@
 <div class="container">
 <h2> <%= @listing.title %> </h2>
-<% if @listing.photo.attached? %>
-   <div class="card">
-          <img src="<%= cl_image_path @listing.photo.key, height: 200, crop: :fill %>" />
-          <div class="card-infos">
-            <h2 class="card-pricing">Rental price per day: $<%=@listing.price %></h2>
-            </div>
-        </div>
-        <% else %>
-          <div>
-          <div class="card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-infos">
-            <h2 class="card-pricing"><%=@listing.price%></h2>
-            </div>
-        </div>
-        <% end %>
-        <%= simple_form_for(@booking) do |f| %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <p> <%= puts  "hello"%></p>
-  <%= f.submit 'Confirm booking', class: 'btn btn-block btn-primary'%>
-<% end %>
-
+  <% if @listing.photo.attached? %>
+    <div class="card">
+            <img src="<%= cl_image_path @listing.photo.key, height: 200, crop: :fill %>" />
+            <div class="card-infos">
+              <h2 class="card-pricing">Rental price per day: $<%=@listing.price %></h2>
+              </div>
+          </div>
+          <% else %>
+            <div>
+            <div class="card">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-infos">
+              <h2 class="card-pricing"><%=@listing.price%></h2>
+              </div>
+          </div>
+          <% end %>
+          <%= simple_form_for([@listing, @booking]) do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit 'Confirm booking', class: 'btn btn-block btn-primary'%>
+  <% end %>
 </div>
-
-
-<h4 class="card-pricing">Rental price per day: $<%= @listing.price %></h4>
