@@ -1,20 +1,15 @@
 <div class="container">
-<h2> <%= @listing.title %> </h2>
-<% if @listing.photo.attached? %>
-   <div class="card">
+  <h2> <%= @listing.title %> </h2>
+    <% if @listing.photo.attached? %>
+      <div class="card">
           <img src="<%= cl_image_path @listing.photo.key, height: 200, crop: :fill %>" />
-          <div class="card-infos">
-            <h2 class="card-pricing">Rental price per day: $<%= @listing.price %></h2>
-            </div>
-        </div>
-        <% else %>
-          <div>
+          <h4 class="card-pricing">Rental price per day: $<%= @listing.price %></h4>
+      </div>
+       <% else %>
           <div class="card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-infos">
-            <h2 class="card-pricing">Rental price per day: $<%= @listing.price %></h2>
-            </div>
-        </div>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <h4 class="card-pricing">Rental price per day: $<%= @listing.price %></h4>
+          </div>
         <% end %>
         <br>
       <p><%= @listing.description %></p>
