@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_05_21_021327) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
