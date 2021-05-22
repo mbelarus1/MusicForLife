@@ -4,12 +4,6 @@ class PagesController < ApplicationController
     @listings = Listing.first(3)
   end
 
-  def index
-  end
-
   def profile
-  end
-
-  def product_detail
   end
 end
