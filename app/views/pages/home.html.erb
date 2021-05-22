@@ -1,27 +1,34 @@
 <div class="banner">
-    <div class="container_1">
-      <h1>MusicForLife</h1>
-      <p>Your one-stop platform for music services and music instruments rental.</p>
-      <br>
+  <div class="container">
+    <h1>MusicForLife</h1>
+    <p>Your one-stop platform for music services and music instruments rental.</p>
+  <br>
 
-      <%= form_tag listings_path, method: :get, class: 'search-container' do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-field",
-            placeholder: "What do you want to rent today?"
-          %>
-          <%= submit_tag "Search", class: "btn btn-music" %>
-        <% end %>
+    <%= form_tag listings_path, method: :get, class: 'search-container' do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-field",
+        placeholder: "What do you want to rent today?"
+      %>
+        <%= submit_tag "Search", class: "btn btn-music" %>
+    <% end %>
 
-      <%= link_to "EXPLORE NOW", listings_path, class: 'btn btn-home' %>
+    <%= link_to "EXPLORE NOW", listings_path, class: 'btn btn-home' %>
 
-     <div class="container_2">
-      <h3>Our Best Recommendation</h3>
-      <div class="cards_2">
+    <br>
+
+
+  </div>
+</div>
+
+ <div class="container-home">
+    <h1 class="container-header">RECOMMENDED FOR YOU</h1>
+    <div class="cards">
       <% @listings.each do |listing| %>
         <% if listing.photo.attached? %>
+        <%= link_to listing_path(listing), style: 'text-decoration: none; link-style: none; color: black;' do %>
       <div class="card">
-        <img src="<%= cl_image_path listing.photo.key, height: 100, crop: :fill %>" />
+        <%= cl_image_tag listing.photo.key, crop: :fill, class: 'card-img-top', style: 'object-fit: cover; height: 200px;' %>
           <div class="card-infos">
             <div>
               <h2><%= listing.title %></h2>
@@ -29,11 +36,8 @@
             <h2 class="card-pricing">$99.99</h2>
           </div>
       </div>
-            <div>
         <% end %>
         <% end %>
+      <% end %>
       </div>
     </div>
-    </div>
- </div>
-</div>
